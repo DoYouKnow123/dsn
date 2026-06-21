@@ -2,6 +2,8 @@ python3 bpsk.py | tee -a xband.log
 
 then in another window (there might be some error saying it can't find a valid CCSDS frame, but just ignore it
 the format is different)
+
+
 cat xband.log | tail -n 1000 | python3 space.py > telem.bin 
 xxd telem.bin | python iceye.py
 xxd -p -c 0 iceeye_recovered.bin | grep -o -E '[0-9a-fA-F]{36}0000' | python3 scid3.py
