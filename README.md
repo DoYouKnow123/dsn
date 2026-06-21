@@ -21,7 +21,7 @@ SCID's are approximate, example new horizons frame in iceeye_recovered.bin
 
 00000050: 0000 0590 4b0d 55d6 19fe 8155 2fc6 ff4d  ....K.U....U/..M
 00000060: 7cad ec25 $$\color{green}{\textbf{0000 0670 7ceb 1d75 ff90 7440  |..%...p|..u..t@}}$$
-00000070: $$\color{green}{\textbf{0e33 7adc 5472 5a2b }}$$0000 0700 c77c 23da  .3z.TrZ+.....|#.
+00000070: $$\color{green}{\textbf{0e33 7adc 5472 5a2b}}$$ 0000 0700 c77c 23da  .3z.TrZ+.....|#.
 
 example output of scid3.py for new horizons frame:
 
