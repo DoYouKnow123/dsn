@@ -5,7 +5,9 @@ the format is different)
 
 
 cat xband.log | tail -n 1000 | python3 space.py > telem.bin 
+
 xxd telem.bin | python iceye.py
+
 xxd -p -c 0 iceeye_recovered.bin | grep -o -E '[0-9a-fA-F]{36}0000' | python3 scid3.py
 
 SCID's are approximate, example new horizons frame in iceeye_recovered.bin
@@ -15,4 +17,5 @@ SCID's are approximate, example new horizons frame in iceeye_recovered.bin
 00000070: 0e33 7adc 5472 5a2b 0000 0700 c77c 23da  .3z.TrZ+.....|#.
 
 example output of scid3.py for new horizons frame:
+
 06707ceb1d75ff9074400e337adc54725a2b0000, apid = 1648, apid_hex = 0x670, scid = -103, SCLK = 4287657024
