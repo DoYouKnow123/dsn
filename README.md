@@ -17,7 +17,9 @@ xxd telem.bin | python iceye.py
 
 xxd -p -c 0 iceeye_recovered.bin | grep -o -E '[0-9a-fA-F]{36}0000' | python3 scid3.py
 
-SCID's are approximate, example new horizons frame in iceeye_recovered.bin
+SCID's are approximate, example new horizons frame in iceeye_recovered.bin (however new horizons seems to start
+
+with "06"(hex) from the strings in the dumps.
 
 00000050: 0000 0590 4b0d 55d6 19fe 8155 2fc6 ff4d  ....K.U....U/..M
 
