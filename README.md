@@ -29,4 +29,4 @@ SCID's are approximate, example new horizons frame in iceeye_recovered.bin
 
 example output of scid3.py for new horizons frame:
 
-06707ceb1d75ff9074400e337adc54725a2b0000, apid = 1648, apid_hex = 0x670, scid = -103, SCLK = 4287657024
+$$\color{green}{\textbf{06707ceb1d75ff9074400e337adc54725a2b0000$$}}, apid = 1648, apid_hex = 0x670, scid = -103, SCLK = 4287657024
