@@ -1,3 +1,5 @@
+Most webcams are sensitive to visible light these days, but they have some capability for x-band radio science.
+
 python3 bpsk.py | tee -a xband.log
 
 then in another window (there might be some error saying it can't find a valid CCSDS frame, but just ignore it
