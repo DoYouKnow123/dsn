@@ -1,3 +1,5 @@
+I tested this latest version in ubuntu linux stonking as of june 20/21 th/st (2026) or so.
+
 Most webcams are sensitive to visible light these days, but they have some capability for x-band radio science.
 
 the array read from the file mapping2 should work over nyquist since it's topologically compact in the frequency domain
