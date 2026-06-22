@@ -81,21 +81,27 @@ def parse_telemetry_line(raw_hex_line):
             tm_frame=False
             aos_frame=False
             uslp_frame=True
-
+        if (full_binary_header[0:2] == "000"):
+            is_space_packet=True
+        else:
+            is_space_packet=False
 #            scid2=(~(int(full_binary_header[6:16],2)))+1
         sclk=int(header_bytes[13:21],16)
         shift=0
         if (tm_frame == True):
             aos_ver=int(full_binary_header[0+shift:2+shift],2)
-            scid=((int(full_binary_header[2+shift:12+shift],2)))
+            scid=((int(full_binary_header[0+shift:8+shift],2))) + 0b1011100
             scid_ext=(((full_binary_header[42+shift:12+shift])))
             if (scid_ext != "00"):
              #   print("test")
-                scid = int(scid_ext + ((full_binary_header[2+shift:12+shift])),2)
+                scid = int(scid_ext + ((full_binary_header[0+shift:8+shift])),2) +0b1011100
             vcid=((int(full_binary_header[11+shift:13+shift],2)))
 #            vcid=int(full_binary_header[14:18],2)
             apid=((int(full_binary_header[5+shift:15+shift],2)))
-            print(f"{line[0:-1]}, aos_ver = {aos_ver}, vcid = {vcid}, apid = {apid:#x}, scid = {scid}")
+            if (is_space_packet == False):
+                print(f"{line[0:-1]}, TM, aos_ver = {aos_ver}, vcid = {vcid}, scid = {scid}")
+            if (is_space_packet == True):
+                print(f"{line[0:-1]}, TM, Space_packet=true, aos_ver = {aos_ver}, vcid = {vcid}, apid = {apid:#x}")
         if (aos_frame == True):
             scid_ext=(((full_binary_header[42+shift:12+shift])))
             if (scid_ext != "00"):
@@ -105,7 +111,11 @@ def parse_telemetry_line(raw_hex_line):
             scid=(int(full_binary_header[2+shift:10+shift],2))
             vcid=int(full_binary_header[10+shift:15+shift],2)
             mcid=int(full_binary_header[0+shift:10+shift],2)
-            print(f"{line[0:-1]}, AOS, aos_ver = {aos_ver}, mcid = {mcid}, scid = {scid}")
+            if (is_space_packet == False): 
+                print(f"{line[0:-1]}, AOS, aos_ver = {aos_ver}, mcid = {mcid}, scid = {scid}")
+            if (is_space_packet == True): 
+                print(f"{line[0:-1]}, AOS, Space_Packet=true, aos_ver = {aos_ver}, mcid = {mcid}, scid = {scid}")
+
         if (uslp_frame == True):
             scid_ext=(((full_binary_header[42+shift:12+shift])))
             if (scid_ext != "00"):
@@ -114,8 +124,17 @@ def parse_telemetry_line(raw_hex_line):
             # 4. Print the unified telemetry line
             scid=((int(full_binary_header[4+shift:10+shift],2)))
             vcid=int(full_binary_header[21+shift:26+shift],2)
-            print(f"{line[0:-1]}, USLP, aos_ver = {aos_ver}, scid = {scid}")
-          
+            direction=int(full_binary_header[3],2)
+            UL="unk"
+            if (direction == 1):
+                UL="downlink"
+            if (direction == 0):
+                UL="uplink"
+            if (is_space_packet == False):
+                print(f"{line[0:-1]}, USLP, UplinkDownlink={UL}, aos_ver = {aos_ver}, scid = {scid}")
+            if (is_space_packet == True):
+                print(f"{line[0:-1]}, USLP, Space Packet=true, UplinkDownlink={UL}, aos_ver = {aos_ver}")
+
     except (ValueError, struct.error):
         # Safely bypass malformed data lines or text boilerplate lines
         pass
