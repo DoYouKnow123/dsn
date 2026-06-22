@@ -5,7 +5,7 @@ Most webcams are sensitive to visible light these days, but they have some capab
 
 the array read from the file mapping2 should work over nyquist since it's topologically compact in the frequency domain
 
-python3 bpsk.py | tee -a xband.log
+python3 bpsk-jitter.py | tee -a xband.log
 
 then in another window (there might be some error saying it can't find a valid CCSDS frame, but just ignore it
 the format is different)
