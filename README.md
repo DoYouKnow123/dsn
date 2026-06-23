@@ -10,6 +10,11 @@ python3 bpsk-jitter.py | tee -a xband.log
 then in another window (there might be some error saying it can't find a valid CCSDS frame, but just ignore it
 the format is different)
 
+cat xband.log | python3 ccsds_frame_read.py
+
+
+
+====================or, maybe===============
 
 cat xband.log | tail -n 1000 | python3 space.py > telem.bin 
 
