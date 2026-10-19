@@ -9,7 +9,7 @@ then type, as new bytes are added to the file,
 python3 nhdemod4.py telemetry_output.bin
 
 
-
+it doesn't have to be pointed directly at the planets/spacecraft to work.
 
 ----------------------------
 you get frames like: 
