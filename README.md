@@ -1,4 +1,4 @@
-I reworked this version to work better with turbo 1/6 frames
+I added a nhdemod4.py that descrambles the frames (using the standard CCSDS descrambler) and turbo (1/6) decodes them.
 
 python bpsk2.py
 
