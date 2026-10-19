@@ -9,7 +9,7 @@ freq_0=8439500000
 CAMERA_INDEX = 0
 
 def extract_row_telemetry_stream():
-    # Initialize the camera capture device via the Linux V4L2 backend
+    # You can use CAP_V4L2 or CAP_AVFOUNDATION
     cap = cv2.VideoCapture(CAMERA_INDEX, cv2.CAP_AVFOUNDATION)
     if not cap.isOpened():
         print(f"Error: Optical sensor index {CAMERA_INDEX} failed to initialize.")
