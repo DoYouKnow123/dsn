@@ -6,11 +6,11 @@ creates a file called telemetry_output.bin from the webcam
 
 then type, as new bytes are added to the file, 
 
-python3 nhdemod12.py telemetry_output.bin out.frames
+python3 nhdemod12.py telemetry_output.bin out.frames # turbo version 1
 
 or
 
-python script3.py telemetry_output.bin frames.out
+python script3.py telemetry_output.bin frames.out # turbo code version 2
 
 or
 
