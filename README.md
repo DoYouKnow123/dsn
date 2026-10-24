@@ -1,13 +1,24 @@
 I added a nhdemod4.py that descrambles the frames (using the standard CCSDS descrambler) and turbo (1/6) decodes them.
 
-python bpsk2.py
+python bpsk2.py | tee ccsds.log
 
 creates a file called telemetry_output.bin from the webcam
 
 then type, as new bytes are added to the file, 
 
-python3 nhdemod4.py telemetry_output.bin
+python3 nhdemod12.py telemetry_output.bin out.frames
 
+or
+
+python script3.py telemetry_output.bin frames.out
+
+or
+
+cat ccsds.log | tail -n 1000 | python3 space.py > telem3.bin
+
+or
+
+cat ccsds.log | tail -n 1000 | python3 space.py -k 7 -r 2 -p "79,5B" -i "0,1" > telem3.bin # for the voyager code
 
 it doesn't have to be pointed directly at the planets/spacecraft to work.
 
