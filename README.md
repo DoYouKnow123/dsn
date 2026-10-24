@@ -25,6 +25,13 @@ it doesn't have to be pointed directly at the planets/spacecraft to work.
 ----------------------------
 you get frames like: 
 
+
+        00000010  2A 5A 01 68 31 AF D4 45 DB 55 70 72 67 35 52 D7  |*Z.h1..E.Uprg5R.|
+        00000020  6F 4B 88 88 4E 8D 4F 14 66 6D 2B A3 1E F6 AC 1F  |oK..N.O.fm+.....|
+
+
+or with an earlier attempt :
+
 [+] Synchronized Frame 166 Isolated at Symbol Offset 1786160:
 
     ├── Extracted APID Subsystem ID : 0x1FC
