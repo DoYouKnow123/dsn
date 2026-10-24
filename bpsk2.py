@@ -9,7 +9,7 @@ freq_0=8439500000
 CAMERA_INDEX = 0
 
 def extract_row_telemetry_stream():
-    # You can use CAP_V4L2 or CAP_AVFOUNDATION
+    # Initialize the camera capture device via the Linux V4L2 backend
     cap = cv2.VideoCapture(CAMERA_INDEX, cv2.CAP_AVFOUNDATION)
     if not cap.isOpened():
         print(f"Error: Optical sensor index {CAMERA_INDEX} failed to initialize.")
@@ -69,12 +69,15 @@ def extract_row_telemetry_stream():
             
             [rate2,dx] = wavfile.read('mapping2.wav')
             dx2=signal.resample(dx,len(t))
-            freq = 0.7*((2/np.pi)*np.arcsin(np.sin(np.pi*np.sin(2*np.pi*t*(np.sin(freq_0*2*np.pi*t)+dx2)-t)))+(2/np.pi)*np.arcsin(np.sin(0.4*np.sin(2*np.pi*t*np.sin((spatial_harmonics+freq_0)*2*np.pi*t)+dx2-t))))
-#            freq = ((2/np.pi)*np.arcsin(np.sin(np.pi*np.sin(spatial_harmonics*t))))
+#            freq = (2/np.pi)*np.arcsin(np.sin(np.pi*np.sin(t)))*np.sin(2*np.pi*freq_0*t)
+            freq = 0.7*((2/np.pi)*np.arcsin(np.sin(np.pi*np.sin(2*np.pi*spatial_harmonics*t*(np.sin(freq_0*2*np.pi*t)+dx2)-t)))+(2/np.pi)*np.arcsin(np.sin(0.4*np.pi*np.sin(2*np.pi*spatial_harmonics*t*np.sin(freq_0*2*np.pi*t)+dx2-t))))
+            
 #            freq=freq/np.max(freq)
-            freq = freq*0.4 - spatial_harmonics
+            spatial_harmonics=0.2*spatial_harmonics+(0.8*freq)*spatial_harmonics
+
+            #spatial_harmonics = freq*0.4 - spatial_harmonics
             #repeated_array = np.tile(dx, len(freq) // len(dx) + 1)[:len(freq)]
-     #       spatial_harmonics=0.2*spatial_harmonics+(0.8*freq)*spatial_harmonics
+   #         spatial_harmonics=freq*spatial_harmonics
 #            spatial_harmonics=spatial_harmonics/np.max(spatial_harmonics)
             # Step 4: FIXED SPATIAL AUTO-CORRELATION LOOP
             if np.std(spatial_harmonics) > 0.5:
