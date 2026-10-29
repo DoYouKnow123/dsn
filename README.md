@@ -32,24 +32,42 @@ you get frames like:
 from ESCAPADE-Blue:
 
 [+] Frame 05142 [Offset 00005142]: REPAIRED (1-Bit Corrected)
+
     ├── Layer 2 Format  : AOS (V2)
+    
     ├── Spacecraft ID   : 9
+    
     └── Virtual Channel : 56
+    
     └── Uncorrupted Frame Panel Data:
+    
         00000000  42 78 15 0D DD 86 EB 77 FF 96 55 67 34 D8 51 97  |Bx.....w..Ug4.Q.|
+        
         00000010  69 6F 90 AF 69 04 17 F1 7B C0 7A B8 CE 1D 34 76  |io..i...{.z...4v|
+        
         00000020  62 0A 37 FD BB D5 E1 07 04 C4 4F 91 CE 0F 43 99  |b.7.......O...C.|
+        
         00000030  09 35 03 60 7B 91 18 5F 07 21 51 92 21 94 A2 2D  |.5.`{.._.!Q.!..-|
+        
         00000040  5D 3B 73 C8 70 99 C7 D0 07 A6 50 7C 22 E3 C2 66  |];s.p.....P|"..f|
         00000050  0C F4 73 63 62 75 51 24 09 06 2F C4 1A AD D8 FF  |..scbuQ$../.....|
+        
         00000060  92 41 D6 62 F1 F6 0A 64 03 CE 11 5A F1 CA E2 7C  |.A.b...d...Z...||
+        
         00000070  F3 BF 64 2C D3 8D 92 4D 1A E8 24 47 E4 4B 45 02  |..d,...M..$G.KE.|
+        
         00000080  92 8F 88 E0 80 C1 56 2B 6A F2 55 E0 49 79 AD 6B  |......V+j.U.Iy.k|
+        
         00000090  03 D4 EB 44 34 5A 3B CD 18 5F A2 3A 88 17 38 D4  |...D4Z;.._.:..8.|
+        
         000000A0  3F 9A 25 6F AD 9D A6 7F E4 78 78 DC D3 3C 32 51  |?.%o.....xx..<2Q|
+        
         000000B0  93 7A B1 08 08 B7 5C A4 4F 0C 51 6F 99 16 4D 82  |.z....\.O.Qo..M.|
+        
         000000C0  6A CA C5 58 C1 C0 65 98 E1 B6 09 0A EB 5C 3A 17  |j..X..e......\:.|
+        
         000000D0  EF 6E 57 C1 95 0E 54 94 33 45 B7 39 53 46 A0     |.nW...T.3E.9SF.|
+        
         -----------------------------------------------------------------------
 
 
