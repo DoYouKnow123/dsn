@@ -29,6 +29,15 @@ you get frames like:
         00000010  2A 5A 01 68 31 AF D4 45 DB 55 70 72 67 35 52 D7  |*Z.h1..E.Uprg5R.|
         00000020  6F 4B 88 88 4E 8D 4F 14 66 6D 2B A3 1E F6 AC 1F  |oK..N.O.fm+.....|
 
+
+
+---------------------
+
+or with script3:
+
+---------------------
+
+
 from ESCAPADE-Blue:
 
 [+] Frame 05142 [Offset 00005142]: REPAIRED (1-Bit Corrected)
