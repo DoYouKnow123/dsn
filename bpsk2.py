@@ -73,23 +73,25 @@ def extract_row_telemetry_stream():
             row_trend = np.convolve(row_averages, np.ones(15)/15, mode='same')
             spatial_harmonics = row_averages - row_trend
             frame_rate=cv2.CAP_PROP_FPS
-            t=np.linspace(0,len(spatial_harmonics)/(sensor_x*sensor_y),len(spatial_harmonics))
-                       
+            #t=np.linspace(0,len(spatial_harmonics)/(sensor_x*sensor_y),len(spatial_harmonics))         
+            t=np.arange(0,40,len(spatial_harmonics))  
             [rate2,dx] = wavfile.read('mapping2.wav')
+           # secs=(len(spatial_harmonics)/rate2)
+#            t=np.linspace(0,secs,len(spatial_harmonics))
             dx2=signal.resample(dx,len(t))
 #            print(dx)
 #            print(t)
 #            print(dx2)
 #            freq = (2/np.pi)*np.arcsin(np.sin(np.pi*np.sin(t)))*np.sin(2*np.pi*freq_0*t)
-#            freq = np.sin(2*np.pi*frame_rate*t)*(0.7*((2/np.pi)*np.arcsin(np.sin(np.pi*np.sin(2*np.pi*spatial_harmonics*t*(np.sin(freq_0*2*np.pi*t)+dx2)-t)))+(2/np.pi)*np.arcsin(np.sin(0.4*np.pi*np.sin(2*np.pi*spatial_harmonics*t*np.sin(freq_0*2*np.pi*t)+dx2-t)))))
-            freq = 0.7*((2/np.pi)*np.arcsin(np.sin(np.pi*np.sin(2*np.pi*freq_1*t)))+(2/np.pi)*np.arcsin(np.sin(0.4*np.pi*np.sin(2*np.pi*t*freq_1))))
+            freq = (0.7*((2/np.pi)*np.arcsin(np.sin(np.pi*np.sin(2*np.pi*spatial_harmonics*t*(np.sin(freq_0*2*np.pi*t)+dx2)-t)))+(2/np.pi)*np.arcsin(np.sin(0.4*np.pi*np.sin(2*np.pi*spatial_harmonics*t*np.sin(freq_0*2*np.pi*t)+dx2-t)))))
+#            freq = 0.7*((2/np.pi)*np.arcsin(np.sin(np.pi*np.sin(2*np.pi*freq_1*t)))+(2/np.pi)*np.arcsin(np.sin(0.4*np.pi*np.sin(2*np.pi*t*freq_1))))
 #            print(freq_1)
-            dx3=dx2[(((freq+1)/2).astype(int)*len(freq))]+(freq).astype(float)
+#            dx3=dx2[(((freq+1)/2).astype(int)*len(freq))]+(freq).astype(float)
 #            print(dx3)
 #            print(len(dx3))
 #            print((freq+1)/2)
-  #          spatial_harmonics=0.2*spatial_harmonics+(0.8*freq)*spatial_harmonics
-            spatial_harmonics=0.2*((dx3*freq+freq)/np.max(dx3*freq+freq))+0.8*spatial_harmonics
+            spatial_harmonics=0.2*spatial_harmonics+(0.8*freq)*spatial_harmonics
+   #         spatial_harmonics=0.6*((dx3*freq+freq)/np.max(dx3*freq+freq))+0.4*spatial_harmonics
             
 #            spatial_harmonics=spatial_harmonics/np.max(spatial_harmonics)
             # Step 4: FIXED SPATIAL AUTO-CORRELATION LOOP
