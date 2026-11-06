@@ -1,14 +1,16 @@
 I added a nhdemod4.py that descrambles the frames (using the standard CCSDS descrambler) and turbo (1/6) decodes them.
 
-python bpsk2.py | tee ccsds.log
+if it's cloudy, I have better luck with
 
-creates a file called telemetry_output.bin from the webcam
+python3 direct_mod_bpsk.py | tee ccsds.log
 
-then type, as new bytes are added to the file, 
+if you have a clearer shot or some sky background is filtered through the window, try
 
-python3 nhdemod12.py telemetry_output.bin out.frames # turbo version 1
+python3 variance_bpsk.py | tee ccsds.log
 
-or
+
+This will also create a file called telemetry_output.bin from the webcam
+
 
 python script3.py telemetry_output.bin frames.out # turbo code version 2
 
