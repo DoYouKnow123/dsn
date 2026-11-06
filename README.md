@@ -2,7 +2,7 @@ First change your directory to the main project directory (main_webcam_app), and
 
 cd main_webcam_app && brew install opencv2-python
 
-if it's cloudy, I have better luck with
+if it's rainy, I have better luck with
 
 python3 direct_mod_bpsk.py | tee ccsds.log
 
