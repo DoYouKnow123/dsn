@@ -15,4 +15,4 @@ python3 ../decoders/turbodecoder.py ../main_webcam_app/telemetry_output.bin turb
 
 then: **spac-parse turbodecoded.frames**
 
-The turbo decoder is just very **slow**.
+The turbo decoder is just very **slow**. But probably a requirement for free-air signal collection from DSN.
