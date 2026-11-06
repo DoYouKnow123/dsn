@@ -13,4 +13,4 @@ But..., you could in theory run:
 python3 ../decoders/turbodecoder.py ../main_webcam_app/telemetry_output.bin turbodecoded.frames
 
 
-then: spac-parse turbodecoded.frames
+then: **spac-parse turbodecoded.frames**
