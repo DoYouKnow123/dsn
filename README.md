@@ -21,11 +21,11 @@ python ../decoders/turbodecoder.py telemetry_output.bin frames.out # rate 1/6
 
 or
 
-cat ccsds.log | tail -n 1000 | python3 space.py > cassini_code_decoded.bin
+cat ccsds.log | tail -n 1000 | python3 ../decoders/space.py > cassini_code_decoded.bin
 
 or
 
-cat ccsds.log | tail -n 1000 | python3 space.py -k 7 -r 2 -p "79,5B" -i "0,1" > voyager_code_decoded.bin # for the voyager code
+cat ccsds.log | tail -n 1000 | python3 ../decoders/space.py -k 7 -r 2 -p "79,5B" -i "0,1" > voyager_code_decoded.bin # for the voyager code
 
 it doesn't have to be pointed directly at the planets/spacecraft to work.
 
