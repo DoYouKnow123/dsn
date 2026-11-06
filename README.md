@@ -11,16 +11,17 @@ python3 variance_bpsk.py | tee ccsds.log
 
 This will also create a file called telemetry_output.bin from the webcam
 
+then type,
 
-python script3.py telemetry_output.bin frames.out # turbo code version 2
-
-or
-
-cat ccsds.log | tail -n 1000 | python3 space.py > telem3.bin
+python decoders/turbodecoder.py telemetry_output.bin frames.out # rate 1/6
 
 or
 
-cat ccsds.log | tail -n 1000 | python3 space.py -k 7 -r 2 -p "79,5B" -i "0,1" > telem3.bin # for the voyager code
+cat ccsds.log | tail -n 1000 | python3 space.py > cassini_code_decoded.bin
+
+or
+
+cat ccsds.log | tail -n 1000 | python3 space.py -k 7 -r 2 -p "79,5B" -i "0,1" > voyager_code_decoded.bin # for the voyager code
 
 it doesn't have to be pointed directly at the planets/spacecraft to work.
 
@@ -35,7 +36,7 @@ you get frames like:
 
 ---------------------
 
-or with script3:
+or with the turbo decoder:
 
 ---------------------
 
