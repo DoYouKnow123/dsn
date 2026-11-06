@@ -1,5 +1,9 @@
 I added a nhdemod4.py that descrambles the frames (using the standard CCSDS descrambler) and turbo (1/6) decodes them.
 
+First change your directory to the main project directory (main_webcam_app), and install opencv2-python
+
+cd main_webcam_app && brew install opencv2-python
+
 if it's cloudy, I have better luck with
 
 python3 direct_mod_bpsk.py | tee ccsds.log
@@ -13,7 +17,7 @@ This will also create a file called telemetry_output.bin from the webcam
 
 then type,
 
-python decoders/turbodecoder.py telemetry_output.bin frames.out # rate 1/6
+python ../decoders/turbodecoder.py telemetry_output.bin frames.out # rate 1/6
 
 or
 
