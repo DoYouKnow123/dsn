@@ -1,0 +1,31 @@
+#!/bin/bash
+
+python3 APID_parseEC.py
+
+
+# Loop through numbers 1 to 10
+
+#apid_1089_final.bin
+for i in {1..6000}
+do
+    filename="apid_${i}_final.bin"
+    
+    # Check if the file exists before processing
+    if [ -f "$filename" ]; then
+        spac-parse --file "$filename"
+        # Add your processing commands here (e.g., python script, cat, mv)
+    fi
+done
+
+for i in {1..6000}
+do
+    filename="apid_${i}_final.xlsx"
+    
+    # Check if the file exists before processing
+    if [ -f "$filename" ]; then
+        xlsx2csv -a "$filename" out/
+        # Add your processing commands here (e.g., python script, cat, mv)
+    fi
+done
+
+python3 csvconv.py
