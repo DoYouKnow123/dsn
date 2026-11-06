@@ -14,3 +14,5 @@ python3 ../decoders/turbodecoder.py ../main_webcam_app/telemetry_output.bin turb
 
 
 then: **spac-parse turbodecoded.frames**
+
+It's just very **slow**.
