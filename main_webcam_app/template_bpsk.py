@@ -71,7 +71,9 @@ def extract_row_telemetry_stream():
             dx2=signal.resample(dx,len(t))
             freq = 0.7*((2/np.pi)*np.arcsin(np.sin(np.pi*np.sin(2*np.pi*spatial_harmonics*t*(np.sin(freq_0*2*np.pi*t)+dx2)-t)))+(2/np.pi)*np.arcsin(np.sin(0.4*np.pi*np.sin(2*np.pi*spatial_harmonics*t*np.sin(freq_0*2*np.pi*t)+dx2-t))))
 #            freq2 = 0.7*((2/np.pi)*np.arcsin(np.sin(np.pi*np.sin(2*np.pi*freq_0*t*t-t)))+(2/np.pi)*np.arcsin(np.sin(0.4*np.pi*np.sin(2*np.pi*freq_0*t*t-t))))
-             
+            
+            # Add scaling factors and rewrite the kernel for multiplication in terms of spatial_harmonics here.
+            
             freq = freq - spatial_harmonics
             #repeated_array = np.tile(dx, len(freq) // len(dx) + 1)[:len(freq)]
             #spatial_harmonics=0.2*spatial_harmonics+(0.8*freq)*spatial_harmonics
