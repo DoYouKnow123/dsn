@@ -12,7 +12,7 @@ python3 variance_bpsk.py | tee ccsds.log
 
 for **raspberry pi**, all you need to do is type: 
 
-python3 variance_picam.py <frequency>
+python3 variance_picam.py frequency_in_hz
 
 or, run: python3 server.py
 
