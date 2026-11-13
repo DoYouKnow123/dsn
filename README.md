@@ -14,9 +14,9 @@ for **raspberry pi**, all you need to do is type:
 
 python3 variance_picam.py <frequency>
 
-then, python3 server.py
+or, run: python3 server.py
 
-(after the file is created)
+
 
 **APPLIES TO standard webcams: You must first change the resolution or device index in these files if your camera isn't on AVFOUNDATION with index=0 (eg. you might use V4L2)**
 
