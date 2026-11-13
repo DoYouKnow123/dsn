@@ -10,7 +10,13 @@ if you have a clearer shot or some sky background is filtered through the window
 
 python3 variance_bpsk.py | tee ccsds.log
 
-**You must first change the resolution or device index in these files if your camera isn't on AVFOUNDATION with index=0 (eg. you might use V4L2)**
+for raspberry pi, all you need to do is type: python3 variance_picam.py
+
+then, python3 server.py telemetry_output.bin
+
+(after the file is created)
+
+**APPLIES TO standard webcams: You must first change the resolution or device index in these files if your camera isn't on AVFOUNDATION with index=0 (eg. you might use V4L2)**
 
 This will also create a file called telemetry_output.bin from the webcam
 
