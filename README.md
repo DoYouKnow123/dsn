@@ -1,4 +1,4 @@
-First change your directory to the main project directory (main_webcam_app), and install opencv2-python
+First change your directory to the main project directory (main_webcam_app), and install opencv2-python, flask, and the other libraries in the beginning of the .py's
 
 cd main_webcam_app && brew install opencv2-python
 
@@ -10,7 +10,9 @@ if you have a clearer shot or some sky background is filtered through the window
 
 python3 variance_bpsk.py | tee ccsds.log
 
-for raspberry pi, all you need to do is type: python3 variance_picam.py <frequency>
+for **raspberry pi**, all you need to do is type: 
+
+python3 variance_picam.py <frequency>
 
 then, python3 server.py telemetry_output.bin
 
