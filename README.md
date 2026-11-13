@@ -10,7 +10,7 @@ if you have a clearer shot or some sky background is filtered through the window
 
 python3 variance_bpsk.py | tee ccsds.log
 
-for raspberry pi, all you need to do is type: python3 variance_picam.py
+for raspberry pi, all you need to do is type: python3 variance_picam.py <frequency>
 
 then, python3 server.py telemetry_output.bin
 
