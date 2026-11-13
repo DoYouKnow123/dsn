@@ -14,7 +14,7 @@ for **raspberry pi**, all you need to do is type:
 
 python3 variance_picam.py <frequency>
 
-then, python3 server.py telemetry_output.bin
+then, python3 server.py
 
 (after the file is created)
 
